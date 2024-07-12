@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KWe-fs-Dzz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KWe-fs-Dzz">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,7 +11,7 @@
             <objects>
                 <navigationController id="KWe-fs-Dzz" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Asa-wt-iv3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -60,20 +59,30 @@
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="93H-zH-adP">
+                                <rect key="frame" x="137.5" y="513" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="200" id="c5G-yW-dPh"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="hrv-B8-xyF"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="NKX-1x-uGd" firstAttribute="top" secondItem="myq-5X-0ue" secondAttribute="bottom" constant="36.5" id="390-9F-Ngz"/>
                             <constraint firstItem="myq-5X-0ue" firstAttribute="centerX" secondItem="gVX-EN-636" secondAttribute="centerX" id="5YQ-sN-8Qh"/>
+                            <constraint firstItem="93H-zH-adP" firstAttribute="centerX" secondItem="NKX-1x-uGd" secondAttribute="centerX" id="O5n-ca-MQD"/>
                             <constraint firstItem="NKX-1x-uGd" firstAttribute="centerX" secondItem="gVX-EN-636" secondAttribute="centerX" id="XSW-I8-MPG"/>
                             <constraint firstItem="myq-5X-0ue" firstAttribute="centerY" secondItem="gVX-EN-636" secondAttribute="centerY" id="YKR-qF-KuA"/>
                             <constraint firstItem="1iD-4H-XZc" firstAttribute="leading" secondItem="gVX-EN-636" secondAttribute="leading" id="cFp-4e-gu5"/>
                             <constraint firstAttribute="trailing" secondItem="1iD-4H-XZc" secondAttribute="trailing" constant="20" symbolic="YES" id="iCG-fe-iIB"/>
+                            <constraint firstItem="Hua-2A-fv3" firstAttribute="top" secondItem="93H-zH-adP" secondAttribute="bottom" constant="54" id="yeN-G5-FDw"/>
                             <constraint firstItem="1iD-4H-XZc" firstAttribute="top" secondItem="gVX-EN-636" secondAttribute="top" id="znM-IE-Kfv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ayy-tS-6dm"/>
                     <connections>
+                        <outlet property="pruebaImage" destination="93H-zH-adP" id="6Pd-wM-QJW"/>
                         <outlet property="webView" destination="1iD-4H-XZc" id="bms-jN-ocI"/>
                     </connections>
                 </viewController>

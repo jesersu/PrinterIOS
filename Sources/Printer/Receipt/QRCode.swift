@@ -28,7 +28,7 @@ public struct QRCode: ReceiptItem {
     //  Sets the size of the module for QR Code to n dots. width == height
     public let width: UInt8
     
-    public init(content: String, width: UInt8 = 200, recovery level: RecoveryLevel = .m, m: Model = .m_2) {
+    public init(content: String, width: UInt8 = 50, recovery level: RecoveryLevel = .m, m: Model = .micro) {
         self.content = content
         self.m = m
         self.width = width
