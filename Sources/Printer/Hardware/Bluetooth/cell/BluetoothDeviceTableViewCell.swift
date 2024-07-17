@@ -13,7 +13,7 @@ class BluetoothDeviceTableViewCell: UITableViewCell {
     @IBOutlet weak var Mac: UILabel!
     static let identifier = "BluetoothDeviceTableViewCell"
     static func nib() -> UINib {
-        return UINib(nibName: "BluetoothDeviceTableViewCell", bundle: nil)
+        return UINib(nibName: "BluetoothDeviceTableViewCell", bundle: Bundle(for: BluetoothDeviceTableViewCell.self))
     }
     override func awakeFromNib() {
         super.awakeFromNib()

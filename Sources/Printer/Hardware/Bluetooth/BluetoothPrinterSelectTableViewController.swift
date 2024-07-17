@@ -20,7 +20,7 @@ public class BluetoothPrinterSelectTableViewController: UITableViewController {
         super.viewDidLoad()
 
         //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        tableView.register(BluetoothDeviceTableViewCell.self, forCellReuseIdentifier: BluetoothDeviceTableViewCell.identifier)
+        tableView.register(BluetoothDeviceTableViewCell.nib(), forCellReuseIdentifier: BluetoothDeviceTableViewCell.identifier)
    
         dataSource = printerManager?.nearbyPrinters ?? []
         printerManager?.delegate = self
@@ -42,9 +42,10 @@ public class BluetoothPrinterSelectTableViewController: UITableViewController {
         }
 
         let printer = dataSource[indexPath.row]
-
+        cell.Name.text = printer.name ?? "unknow"
+        cell.Mac.text = String(printer.identifier.uuidString)
         //cell.textLabel?.text = printer.name ?? "unknow"
-        cell.textLabel?.text = String(printer.identifier.uuidString)
+        //cell.textLabel?.text = String(printer.identifier.uuidString)
         cell.accessoryType = printer.state == .connected ? .checkmark : .none
 
         if printer.isConnecting {
