@@ -42,7 +42,7 @@ public class BluetoothPrinterSelectTableViewController: UITableViewController {
         }
 
         let printer = dataSource[indexPath.row]
-        cell.Name.text = printer.name ?? "unknow"
+        cell.Name.text = printer.name ?? "Desconocido"
         cell.Mac.text = String(printer.identifier.uuidString)
         //cell.textLabel?.text = printer.name ?? "unknow"
         //cell.textLabel?.text = String(printer.identifier.uuidString)
@@ -77,6 +77,9 @@ public class BluetoothPrinterSelectTableViewController: UITableViewController {
         } else {
             printerManager?.connect(p)
         }
+    }
+    public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
     }
 }
 
