@@ -9,6 +9,12 @@ import UIKit
 
 class BluetoothDeviceTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Mac: UILabel!
+    static let identifier = "BluetoothDeviceTableViewCell"
+    static func nib() -> UINib {
+        return UINib(nibName: "BluetoothDeviceTableViewCell", bundle: nil)
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

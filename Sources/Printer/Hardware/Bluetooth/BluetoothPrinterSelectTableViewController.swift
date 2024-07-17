@@ -19,8 +19,9 @@ public class BluetoothPrinterSelectTableViewController: UITableViewController {
     override public func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-
+        //tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        tableView.register(BluetoothDeviceTableViewCell.self, forCellReuseIdentifier: BluetoothDeviceTableViewCell.identifier)
+   
         dataSource = printerManager?.nearbyPrinters ?? []
         printerManager?.delegate = self
     }
@@ -34,7 +35,7 @@ public class BluetoothPrinterSelectTableViewController: UITableViewController {
     }
 
     override public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: BluetoothDeviceTableViewCell.identifier, for: indexPath) as! BluetoothDeviceTableViewCell
 
         guard indexPath.row < dataSource.count else {
             return cell
